@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_0210325sys" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOT-Ip-dDa">
+                                <rect key="frame" x="44" y="0.0" width="808" height="414"/>
+                                <connections>
+                                    <action selector="toMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x7Y-ws-uiE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vOT-Ip-dDa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8Rd-U5-zNW"/>
+                            <constraint firstItem="vOT-Ip-dDa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B4T-6T-YhN"/>
+                            <constraint firstItem="vOT-Ip-dDa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H3u-pt-YEI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vOT-Ip-dDa" secondAttribute="trailing" id="c5e-Q4-95Z"/>
+                            <constraint firstAttribute="bottom" secondItem="vOT-Ip-dDa" secondAttribute="bottom" id="m4e-vP-3Zr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="gjL-63-gGH" kind="presentation" identifier="toMenu" id="Dq8-ft-dhd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.821428571428569" y="92.753623188405811"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="T9i-M7-mtd">
+            <objects>
+                <viewController id="gjL-63-gGH" customClass="MenuViewController" customModule="_0210325sys" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Du9-wL-beE">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgA-CD-9R5">
+                                <rect key="frame" x="519" y="127" width="261" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="hondana"/>
+                                <connections>
+                                    <action selector="toHondana:" destination="gjL-63-gGH" eventType="touchUpInside" id="zX8-Jo-qoD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pHb-qK-C4M"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="cRl-gE-tyJ" kind="presentation" identifier="toHondana" id="neK-9r-Z4x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9w-9t-kdo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727.90178571428567" y="92.753623188405811"/>
+        </scene>
+        <!--Hondana View Controller-->
+        <scene sceneID="ty6-bI-VfX">
+            <objects>
+                <viewController id="cRl-gE-tyJ" customClass="HondanaViewController" customModule="_0210325sys" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xks-aM-Aii">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YS8-R1-MLA">
+                                <rect key="frame" x="82" y="221" width="145" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="DrHukuhuku"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6RC-Z0-X8v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="DYt-Lr-QfV" kind="presentation" identifier="toResult" id="eos-wp-EdF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQs-dq-AtO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425.6696428571429" y="92.753623188405811"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="9HE-0v-0hC">
+            <objects>
+                <viewController id="DYt-Lr-QfV" customClass="ResultViewController" customModule="_0210325sys" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ph-bH-CMn">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APw-q3-rWM">
+                                <rect key="frame" x="736" y="46" width="90" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ae-6s-FTJ">
+                                <rect key="frame" x="736" y="109" width="96" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W4d-S0-bb6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelX" destination="APw-q3-rWM" id="mtx-HO-xfI"/>
+                        <outlet property="labelY" destination="8Ae-6s-FTJ" id="xzC-hM-DHO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyL-nO-Q0x" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2147.5446428571427" y="92.753623188405811"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="DrHukuhuku" width="714" height="698"/>
+        <image name="hondana" width="1016" height="807"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
