@@ -21,38 +21,6 @@ class HondanaViewController: UIViewController {
             
             
             self.view.addBackground(name: "back.png")
-            
-//            for i in 0...hondana.count-1 {
-//                let button = UIButton()
-//
-//                //button.addTarget(self, action: #selector(alert), for: .touchUpInside)
-//
-//                //サイズ
-//                var j:Int
-//                var k:Int
-//                j = i%3
-//                k = i/3
-//
-//                button.frame = CGRect(x: 100+(j*250), y: 50+(k*200), width: 100, height: 130)
-//                //タグ
-//                button.tag = i
-//                //buttonに画像を挿入
-//                setImageForButton(tag: button.tag, button: button)
-//
-//
-//                //button.titleの色
-//                //button.setTitleColor(.white, for: .normal)
-//                button.layer.borderWidth = 1
-//                //button.setTitle("sample", for: .normal)
-//                //button.setTitleColor(.white, for: .normal)
-//
-//                //追加したコード
-//                button.addTarget(self, action: #selector(pushButton), for: .touchUpInside)
-//
-//
-//                self.view.addSubview(button)
-//
-//            }
 
         }
     

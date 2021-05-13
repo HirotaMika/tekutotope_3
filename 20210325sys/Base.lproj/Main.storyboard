@@ -57,6 +57,14 @@
                                     <action selector="toHondana:" destination="gjL-63-gGH" eventType="touchUpInside" id="zX8-Jo-qoD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quz-ju-aEt">
+                                <rect key="frame" x="144" y="86" width="228" height="248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="さがす"/>
+                                <connections>
+                                    <segue destination="YmM-hK-eUF" kind="presentation" id="1kD-j9-DUR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pHb-qK-C4M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -198,14 +206,51 @@
             </objects>
             <point key="canvasLocation" x="1425.6696428571429" y="979.71014492753636"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="xNR-9l-6R9">
+            <objects>
+                <viewController id="YmM-hK-eUF" customClass="searchViewController" customModule="_0210325sys" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9xK-AT-LfJ">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nya-M7-Tn3">
+                                <rect key="frame" x="0.0" y="70" width="896" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="AzF-e2-VfD"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="czH-c6-sGV"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMb-0N-zq8">
+                                <rect key="frame" x="47" y="0.0" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back-1"/>
+                                <connections>
+                                    <action selector="back:" destination="cRl-gE-tyJ" eventType="touchUpInside" id="7lA-1w-2yP"/>
+                                    <segue destination="gjL-63-gGH" kind="presentation" id="d69-vL-Cmo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IEF-ka-UMV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollview2" destination="Nya-M7-Tn3" id="4Vz-fY-nXL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9N-O5-Ne6" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="727.90178571428567" y="1844.9275362318842"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="iQX-7X-vij"/>
+        <segue reference="d69-vL-Cmo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="DrHukuhuku" width="714" height="698"/>
         <image name="back-1" width="492.5" height="492"/>
         <image name="hondana" width="1016" height="807"/>
+        <image name="さがす" width="429" height="467"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
