@@ -8,20 +8,32 @@
 import UIKit
 
 
-class HondanaViewController: UIViewController {
+class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet var scrollview1: UIScrollView!
     var vc1 = UIView()
-    let button = UIButton()
     
         override func viewDidLoad() {
             super.viewDidLoad()
             verticalScroll()
             
+            let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
+                        target: self,
+                        action: #selector(self.tapAction(_:))
+                    )
+            tapGesture.delegate = self
+            self.view.addGestureRecognizer(tapGesture)
+            
             
             
             self.view.addBackground(name: "back.png")
 
+        }
+    
+    @objc func tapAction(_ sender: UITapGestureRecognizer) {
+            if sender.state == .ended {
+                print("やほー")
+            }
         }
     
     func verticalScroll() {
@@ -68,7 +80,7 @@ class HondanaViewController: UIViewController {
     @objc func buttonTapped(sender : UIButton) {
         let m = sender.tag
         id = hondana[m]
-        performSegue(withIdentifier: "containsegue", sender: nil)
+        performSegue(withIdentifier: "toResult", sender: nil)
     }
     
     
