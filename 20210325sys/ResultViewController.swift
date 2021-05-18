@@ -78,18 +78,6 @@ class ResultViewController: UIViewController {
         
         // 画像のフレーム
         var viewFrame: CGRect = imageBag.frame
-        
-        // 移動分を反映させる
-        viewFrame.origin.x += dx
-        viewFrame.origin.y += dy
-        
-        imageBag.frame = viewFrame
-        
-        self.view.addSubview(imageBag)
-        
-        // 小数点以下２桁のみ表示
-        labelX.text = "x: ".appendingFormat("%.2f", newDx)
-        labelY.text = "y: ".appendingFormat("%.2f", newDy)
     }
  
     override func didReceiveMemoryWarning() {
