@@ -77,7 +77,7 @@ class ResultViewController: UIViewController {
         print("y:\(dy)")
         
         // 画像のフレーム
-        var viewFrame: CGRect = imageBag.frame
+        var _: CGRect = imageBag.frame
     }
  
     override func didReceiveMemoryWarning() {
