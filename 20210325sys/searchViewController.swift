@@ -8,26 +8,59 @@
 import UIKit
 
 class searchViewController: UIViewController {
-
-    @IBOutlet var scrollview2: UIScrollView!
     
-    var vc1 = UIView()
-    let button = UIButton()
+    // UIScrollViewインスタンス生成
+        var scrollView = UIScrollView()
+        
+        // Screenの高さ
+        var screenHeight:CGFloat!
+        // Screenの幅
+        var screenWidth:CGFloat!
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 画面サイズ取得
+                let screenSize: CGRect = UIScreen.main.bounds
+                screenWidth = screenSize.width
+                screenHeight = screenSize.height
+                
+                // 表示窓のサイズと位置を設定
+                scrollView.frame.size =
+                    CGSize(width: screenWidth, height: screenWidth)
+                scrollView.center = self.view.center
+                
+                // 表示する画像
+                let jellyfish:UIImage = UIImage(named:"haikei_X")!
+                
+                // 画像のサイズ
+                let imgW = jellyfish.size.width
+                let imgH = jellyfish.size.height
+                
+                // UIImageView 初期化
+                let imageView = UIImageView(image: jellyfish)
+                
+                // UIScrollViewに追加
+                scrollView.addSubview(imageView)
+         
+                // UIScrollViewの大きさを画像サイズに設定
+                scrollView.contentSize = CGSize(width: imgW, height: imgH)
+                
+                // スクロールの跳ね返り無し
+                scrollView.bounces = false
+                
+                // ビューに追加
+                self.view.addSubview(scrollView)
+                
         
         
 
         // Do any additional setup after loading the view.
     }
     
-    func verticalScroll() {
-        //vcのframe
-        vc1.frame = CGRect(x: 0, y: 0, width:1194, height: 1000)
-        
-        self.scrollview2.addBackground(name: "haikei_X.png")
-    }
+
 
     
 

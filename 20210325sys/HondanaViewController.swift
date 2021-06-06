@@ -17,28 +17,28 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
             super.viewDidLoad()
             verticalScroll()
             
-            let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
-                        target: self,
-                        action: #selector(self.tapAction(_:))
-                    )
-            tapGesture.delegate = self
-            self.view.addGestureRecognizer(tapGesture)
-            
-            
+//            let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
+//                        target: self,
+//                        action: #selector(self.tapAction(_:))
+//                    )
+//            tapGesture.delegate = self
+//            self.view.addGestureRecognizer(tapGesture)
             
             self.view.addBackground(name: "back.png")
 
         }
     
-    @objc func tapAction(_ sender: UITapGestureRecognizer) {
-            if sender.state == .ended {
-                print("やほー")
-            }
-        }
+//    @objc func tapAction(_ sender: UITapGestureRecognizer) {
+//            if sender.state == .ended {
+//                print("長押ししたよ")
+//            }
+//        }
     
     func verticalScroll() {
         //vcのframe
         vc1.frame = CGRect(x: 0, y: 0, width:1194, height: 1000)
+        
+        
         
         //上部のスクロールビューに多数のボタンを配置
         for i in 0...hondana.count-1 {
@@ -53,7 +53,7 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
             j = i%3
             k = i/3
       
-            button.frame = CGRect(x: 150+(j*350), y: 90+(k*300), width: 190, height: 230)
+            button.frame = CGRect(x: 150+(j*200), y: 90+(k*200), width: 130, height: 180)
             //タグ
             button.tag = i
             //buttonに画像を挿入
@@ -70,6 +70,9 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
             //vcに載せる
             vc1.addSubview(button)
             
+            let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(onLongPress))
+            button.addGestureRecognizer(recognizer)
+            
         }
         //スクロールビューにvcを配置
         scrollview1.addSubview(vc1)
@@ -81,6 +84,12 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
         let m = sender.tag
         id = hondana[m]
         performSegue(withIdentifier: "toResult", sender: nil)
+    }
+    
+    @objc func onLongPress() {
+        let alert = UIAlertController(title: "Long Press", message: "親父にも長押しされたことないのに！", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
@@ -99,8 +108,13 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
     }
-            
     
+    @objc func tapAction(_ sender: UITapGestureRecognizer) {
+            if sender.state == .ended {
+                print("長押ししたよ")
+            }
+        }
+            
     @objc func pushButton(sender: UIButton){
             print("button pushed.")
             performSegue(withIdentifier: "toResult", sender: nil)

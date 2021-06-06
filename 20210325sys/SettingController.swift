@@ -10,7 +10,7 @@ import UIKit
 //var word: [String] = []
 
 let word = ["いか","まぐろ","うみ","えんがわ","鉄火巻","カンパチ","サーモン","とろ","うに","カッパ","タコ","いくら","はまち","しめさば"]
-let hondana = [1,2,3,4,5,6,7]
+let hondana = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
 
 extension UIView {
     func addBackground(name: String) {
