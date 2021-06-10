@@ -22,11 +22,15 @@ class searchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
+    
     func verticalScroll() {
+        
+        
         //vcのframe
         vc1.frame = CGRect(x: 0, y: 0, width:1194, height: 1000)
-        
         self.scrollview2.addBackground(name: "haikei_X.png")
+        
     }
 
     
