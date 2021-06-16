@@ -20,12 +20,14 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
             self.view.addBackground(name: "back.png")
 
         }
-
+    
+    //////////////
+    //////////////
+    
     //スクロールビュー上の処理
     func verticalScroll() {
         //vcのframe
         vc1.frame = CGRect(x: 0, y: 0, width:1194, height: 1000)
-        
         
         //上部のスクロールビューに多数のボタンを配置
         for i in 0...hondana.count-1 {
@@ -61,11 +63,11 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
             
         }
         
-        
         //スクロールビューにvcを配置
         scrollview1.addSubview(vc1)
         scrollview1.contentSize = vc1.bounds.size
     }
+    
     
     
     func setImageForButton(tag:Int, button:UIButton){
