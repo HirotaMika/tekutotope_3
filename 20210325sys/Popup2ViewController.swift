@@ -1,19 +1,19 @@
 //
-//  PopupViewController.swift
+//  Popup2ViewController.swift
 //  20210325sys
 //
-//  Created by 廣田美香 on 2021/05/13.
+//  Created by 廣田美香 on 2021/07/07.
 //
 
 import UIKit
 
-class PopupViewController: UIViewController {
+class Popup2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+
         // Do any additional setup after loading the view.
     }
     
