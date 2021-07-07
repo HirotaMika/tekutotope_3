@@ -17,25 +17,13 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
             super.viewDidLoad()
             verticalScroll()
             
-            let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
-                        target: self,
-                        action: #selector(self.tapAction(_:))
-                    )
-            tapGesture.delegate = self
-            self.view.addGestureRecognizer(tapGesture)
-            
-            
             
             self.view.addBackground(name: "back.png")
 
         }
     
-    @objc func tapAction(_ sender: UITapGestureRecognizer) {
-            if sender.state == .ended {
-                print("やほー")
-            }
-        }
-    
+ 
+    //スクロールビュー上の処理
     func verticalScroll() {
         //vcのframe
         vc1.frame = CGRect(x: 0, y: 0, width:1194, height: 1000)
@@ -44,43 +32,45 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
         for i in 0...hondana.count-1 {
             
             let button = UIButton()
-            
-            //button.addTarget(self, action: #selector(alert), for: .touchUpInside)
-            
+    
             //サイズ
             var j:Int
             var k:Int
             j = i%3
             k = i/3
-      
             button.frame = CGRect(x: 150+(j*350), y: 90+(k*300), width: 190, height: 230)
-            //タグ
+            
+            //ボタンそれぞれにタグをつける
             button.tag = i
-            //buttonに画像を挿入
+            //buttonに画像を挿入する処理をする
             setImageForButton(tag: button.tag, button: button)
             
+            //////////////////////////////////////
+            //setActionForButton(tag: button.tag, button: button)
+            /////////////////////////////////////
             
-            //button.titleの色
-            //button.setTitleColor(.white, for: .normal)
             button.layer.borderWidth = 1
+            button.isUserInteractionEnabled = true
             
-            
-            //buttonを押した時の処理を追加
+            //タップしたときに参照する処理を定義
             button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+            
+            //長押しした時に参照する処理を定義
+            let longPressGesture =
+                UILongPressGestureRecognizer(target: self,
+                action: #selector(self.longPress(_:)))
+            
+            longPressGesture.delegate = self
+            button.addGestureRecognizer(longPressGesture)
+                        
             //vcに載せる
             vc1.addSubview(button)
             
         }
+        
         //スクロールビューにvcを配置
         scrollview1.addSubview(vc1)
         scrollview1.contentSize = vc1.bounds.size
-    }
-    
-    var id: Int = 0
-    @objc func buttonTapped(sender : UIButton) {
-        let m = sender.tag
-        id = hondana[m]
-        performSegue(withIdentifier: "toResult", sender: nil)
     }
     
     
@@ -99,12 +89,80 @@ class HondanaViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
     }
-            
+//
+//    func setActionForButton(tag:Int, button:UIButton){
+//
+//        print("ここには来たよ")
+//
+//        print(button.frame.origin.x)
+//
+//    }
     
-    @objc func pushButton(sender: UIButton){
-            print("button pushed.")
-            performSegue(withIdentifier: "toResult", sender: nil)
+    //タップのときの動作（次のページへ）
+    var id: Int = 0
+    @objc func buttonTapped(sender : UIButton) {
+        let m = sender.tag
+        id = hondana[m]
+        performSegue(withIdentifier: "toResult", sender: nil)
+    }
+    
+    //長押しの時の動作
+    //現段階では、文字をprint
+    @objc func longPress(_ sender: UILongPressGestureRecognizer){
+               if sender.state == .began {
+                print("LongPress began")
+                    if let button = sender.view as? UIButton {
+                       
+                        print(button.tag)
+                        print("x=",button.frame.origin.x,"y=",button.frame.origin.y)
+                        
+                  
+                    } else {
+                    //sender.viewはUIButtonではない
+                    }
+                
+               }
+               else if sender.state == .ended {
+                   //print("Long Pressed !")
+                
+            }
         }
+    
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//            // タッチイベントを取得
+//            let touchEvent = touches.first!
+//
+//            // ドラッグ前の座標, Swift 1.2 から
+//            let preDx = touchEvent.previousLocation(in: self.view).x
+//            let preDy = touchEvent.previousLocation(in: self.view).y
+//
+//            // ドラッグ後の座標
+//            let newDx = touchEvent.location(in: self.view).x
+//            let newDy = touchEvent.location(in: self.view).y
+//
+//            // ドラッグしたx座標の移動距離
+//            let dx = newDx - preDx
+//            print("x:\(dx)")
+//
+//            // ドラッグしたy座標の移動距離
+//            let dy = newDy - preDy
+//            print("y:\(dy)")
+//
+//            // 画像のフレーム
+//            var viewFrame: CGRect = imageBag.frame
+//
+//            // 移動分を反映させる
+//            viewFrame.origin.x += dx
+//            viewFrame.origin.y += dy
+//
+//            imageBag.frame = viewFrame
+//
+//            self.view.addSubview(imageBag)
+//
+//            // 小数点以下２桁のみ表示
+////            labelX.text = "x: ".appendingFormat("%.2f", newDx)
+////            labelY.text = "y: ".appendingFormat("%.2f", newDy)
+//        }
     
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
